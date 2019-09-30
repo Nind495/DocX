@@ -370,7 +370,7 @@ namespace Xceed.Words.NET
           XAttribute hanging = ind.Attribute( XName.Get( "hanging", DocX.w.NamespaceName ) );
           hanging?.Remove();
 
-          string indentation = ( ( indentationFirstLine / 0.1 ) * 57 ).ToString();
+          string indentation = ( ( indentationFirstLine / 0.1 ) * 57 ).ToString().Replaces(",",".");
           XAttribute firstLine = ind.Attribute( XName.Get( "firstLine", DocX.w.NamespaceName ) );
           if( firstLine != null )
             firstLine.Value = indentation;
